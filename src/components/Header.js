@@ -1,15 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const ExpenseListItem = ({ id, description, amount, createdAt }) => (
-  <div>
-    <Link to={`/edit/${id}`}>
-      <h3>{description}</h3>
-    </Link>
-    <p>
-      {amount} - {createdAt}
-    </p>
-  </div>
+const Header = () => (
+  <header>
+    <h1>Expensify</h1>
+    <NavLink to="/" activeClassName="is-active" exact={true}>
+      Dashboard
+    </NavLink>
+    <NavLink to="/create" activeClassName="is-active">
+      Create Expense
+    </NavLink>
+  </header>
 )
 
-export default ExpenseListItem
+export default Header
