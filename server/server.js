@@ -4,7 +4,7 @@ const app = express()
 console.log(__dirname)
 const publicPath = path.join(__dirname, '..', 'public')
 console.log(publicPath)
-
+const port = process.env.PORT || 3000
 app.use(express.static(publicPath))
 
 app.get('*', (req, res) => {
